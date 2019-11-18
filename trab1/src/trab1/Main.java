@@ -9,13 +9,6 @@ package trab1;
  *
  * @author guest-l0rqz1
  */
-public class Trab1 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Main {
     
 }
