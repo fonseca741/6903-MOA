@@ -35,4 +35,36 @@ public class Grafo {
             i++;
         }
     }
+
+    public void print(){
+        int i = 0;
+        for (Vertice vertice : this.getVertices()){
+            System.out.println("Vertice " + i + ":" + vertice.getValue());
+            i++;
+        }
+    }
+
+    public void printAdj(){
+        int i = 0;
+        for (Vertice vertice : this.getVertices()) {
+            System.out.println("Vertice " + i + ":" + vertice.getValue());
+            for (Vertice adjacente : vertice.getAdj()) {
+                System.out.println(adjacente.getValue());
+            }
+            i++;
+        }
+    }
+
+    public int h1(int[] configFinal) {
+        int i = 0;
+        int cont = 0;
+        for (Vertice vertice : this.vertices) {
+            if (vertice.getValue() != configFinal[i]){
+                System.out.println("Passei aqui!");
+                cont++;
+            }
+            i++;
+        }
+        return cont;
+    }
 }
