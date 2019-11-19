@@ -67,4 +67,18 @@ public class Grafo {
         }
         return cont;
     }
+
+    public int h2() {
+        int cont = 0;
+        for (int i = 0; i < 15; i++) {
+            int posAtual = this.vertices.get(i).getValue();
+            int posFuturo = this.vertices.get(i+1).getValue();
+            if (posFuturo != posAtual + 1){
+                if (posAtual != 0){
+                    cont++;
+                }
+            }
+        }
+        return cont;
+    }
 }

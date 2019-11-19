@@ -28,5 +28,6 @@ public class NPuzzle {
         grafo.printAdj();
 
         System.out.println("Heurística 1: " + grafo.h1(configFinal));
+        System.out.println("Heurística 2: " + grafo.h2());
     }
 }
