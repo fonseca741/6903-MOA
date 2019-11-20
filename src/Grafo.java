@@ -55,12 +55,11 @@ public class Grafo {
         }
     }
 
-    public int h1(int[] configFinal) {
+    public int h1() {
         int i = 0;
         int cont = 0;
         for (Vertice vertice : this.vertices) {
-            if (vertice.getValue() != configFinal[i]){
-                System.out.println("Passei aqui!");
+            if (vertice.getValue() != NPuzzle.configFinal.getVertices().get(i).getValue()){
                 cont++;
             }
             i++;
@@ -80,5 +79,19 @@ public class Grafo {
             }
         }
         return cont;
+    }
+
+    public int h3(){
+        int i = 0;
+        int soma = 0;
+        int aux;
+        for (Vertice vertice : this.vertices) {
+            if (vertice.getValue() != NPuzzle.configFinal.getVertices().get(i).getValue()){
+                aux = ((vertice.getPosx() - NPuzzle.configFinal.getVertices().get(i).getPosx()) + (vertice.getPosx() - NPuzzle.configFinal.getVertices().get(i).getPosy()));
+                soma += aux;
+            }
+            i++;
+        }
+        return soma;
     }
 }
