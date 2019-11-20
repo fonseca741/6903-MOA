@@ -90,6 +90,9 @@ public class Grafo {
         for (Vertice vertice : this.vertices) {
             if (vertice.getValue() != NPuzzle.configFinal.getVertices().get(i).getValue()){
                 aux = ((vertice.getPosx() - NPuzzle.configFinal.getVertices().get(i).getPosx()) + (vertice.getPosx() - NPuzzle.configFinal.getVertices().get(i).getPosy()));
+                if (aux < 0) {
+                    aux = aux * -1;
+                }
                 soma += aux;
             }
             i++;
@@ -97,13 +100,15 @@ public class Grafo {
         return soma;
     }
 
-    public int h4(int h1, int h2, int h3, int p1, int p2, int p3){
+    public double h4(int h1, int h2, int h3, double p1, double p2, double p3){
         return p1*h1 + p2*h2 + p3*h3;
     }
-//
-//    public int h5(int h1, int h2, int h3){
-//        if (h1 > h2 && h1 > h3) return h1;
-//        if (h1 > h2 && h1 < h3) return h3;
-//        if (h)
-//    }
+    public int h5(int h1, int h2, int h3){
+        if (h1 > h2 && h1 > h3) return h1;
+        if (h1 > h2 && h1 < h3) return h3;
+        if (h2 > h1 && h2 > h3) return h2;
+        if (h2 > h1 && h2 < h3) return h3;
+        if (h3 > h1 && h3 > h2) return h3;
+        return h2;
+    }
 }

@@ -20,5 +20,7 @@ public class NPuzzle {
         System.out.println("Heurística 1: " + grafo.h1());
         System.out.println("Heurística 2: " + grafo.h2());
         System.out.println("Heuristica 3: " + grafo.h3());
+        System.out.println("Heuristica 4: " + grafo.h4(grafo.h1(), grafo.h2(), grafo.h3(), 0.1, 0.8, 0.1));
+        System.out.println("Heuristica 5: " + grafo.h5(grafo.h1(), grafo.h2(), grafo.h3()));
     }
 }
