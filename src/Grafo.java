@@ -70,11 +70,13 @@ public class Grafo {
     public int h2() {
         int cont = 0;
         for (int i = 0; i < 15; i++) {
-            int posAtual = this.vertices.get(i).getValue();
-            int posFuturo = this.vertices.get(i+1).getValue();
-            if (posFuturo != posAtual + 1){
-                if (posAtual != 0){
-                    cont++;
+            int valAtual = this.vertices.get(i).getValue();
+            int valFuturo = this.vertices.get(i+1).getValue();
+            if (valAtual != 0) {
+                if (valFuturo != valAtual + 1) {
+                    if (valAtual != 15 || valFuturo != 0) {
+                        cont++;
+                    }
                 }
             }
         }
@@ -94,4 +96,14 @@ public class Grafo {
         }
         return soma;
     }
+
+    public int h4(int h1, int h2, int h3, int p1, int p2, int p3){
+        return p1*h1 + p2*h2 + p3*h3;
+    }
+//
+//    public int h5(int h1, int h2, int h3){
+//        if (h1 > h2 && h1 > h3) return h1;
+//        if (h1 > h2 && h1 < h3) return h3;
+//        if (h)
+//    }
 }
