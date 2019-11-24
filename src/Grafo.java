@@ -2,6 +2,20 @@ import java.util.ArrayList;
 
 public class Grafo {
     private ArrayList<Vertice> vertices = new ArrayList<>();
+    private int pos0;
+    private int f;
+    private int g;
+    private int h;
+
+    public Grafo(){}
+
+    public Grafo(ArrayList<Vertice> vertices, int pos0, int f, int g, int h) {
+        this.vertices = vertices;
+        this.pos0 = pos0;
+        this.f = f;
+        this.g = g;
+        this.h = h;
+    }
 
     public ArrayList<Vertice> getVertices() {
         return vertices;
@@ -9,9 +23,15 @@ public class Grafo {
 
     public void criarGrafo(int[] entrada){
         int cont = 0;
+        this.f = 0;
+        this.g = 0;
+        this.h = 0;
         for (int i=0; i < 4; i++){
             for (int j=0; j < 4; j++){
-                this.vertices.add(new Vertice( i, j, entrada[cont]));
+                this.vertices.add(new Vertice( i, j, entrada[cont], cont));
+                if (entrada[cont] == 0) {
+                    this.pos0 = cont;
+                }
                 cont++;
             }
         }
@@ -42,6 +62,7 @@ public class Grafo {
             System.out.println("Vertice " + i + ":" + vertice.getValue());
             i++;
         }
+        System.out.println(this.pos0);
     }
 
     public void printAdj(){
@@ -103,12 +124,29 @@ public class Grafo {
     public double h4(int h1, int h2, int h3, double p1, double p2, double p3){
         return p1*h1 + p2*h2 + p3*h3;
     }
+
     public int h5(int h1, int h2, int h3){
         if (h1 > h2 && h1 > h3) return h1;
-        if (h1 > h2 && h1 < h3) return h3;
         if (h2 > h1 && h2 > h3) return h2;
-        if (h2 > h1 && h2 < h3) return h3;
-        if (h3 > h1 && h3 > h2) return h3;
-        return h2;
+        return h3;
+    }
+
+    public Grafo copySwap(Vertice vertice){
+        Grafo copia = new Grafo(this.vertices, this.pos0, this.f, this.g, this.h);
+        copia.getVertices().get(this.pos0).setValue(vertice.getValue());
+        copia.getVertices().get(vertice.getIndex()).setValue(0);
+        this.pos0 = vertice.getIndex();
+
+        return copia;
+    }
+
+    public ArrayList<Grafo> gerarSucessores(Grafo grafo){
+        ArrayList<Grafo> retorno = new ArrayList<>();
+        int tamListaAdj = grafo.getVertices().get(grafo.pos0).getAdj().size();
+        for (int i = 0; i < tamListaAdj; i++) {
+            Vertice adj = grafo.getVertices().get(this.pos0).getAdj().get(i);
+            retorno.add(this.copySwap(adj));
+        }
+        return retorno;
     }
 }
