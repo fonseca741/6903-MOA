@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Vertice {
+class Vertice {
     private ArrayList<Vertice> adj;
     private int posx;
     private int posy;

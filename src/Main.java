@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class NPuzzle {
+class Main {
     public static Grafo configFinal = new Grafo();
 
     public static void main(String[] args) {
@@ -15,7 +15,6 @@ public class NPuzzle {
         }
 
         grafo.criarGrafo(entrada);
-        grafo.criarAdj();
         grafo.print();
 
         System.out.println("Heurística 1: " + grafo.h1());

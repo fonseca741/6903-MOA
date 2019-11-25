@@ -1,40 +1,24 @@
 import java.util.ArrayList;
 
-public class Grafo {
+class Grafo {
     private ArrayList<Vertice> vertices = new ArrayList<>();
+    private Grafo pai;
     private int pos0;
-    private int f;
     private int g;
     private int h;
 
     public Grafo(){}
 
-    public Grafo(ArrayList<Vertice> vertices, int pos0, int f, int g, int h) {
+    public Grafo(Grafo pai, ArrayList<Vertice> vertices, int pos0, int g, int h) {
+        this.pai = pai;
         this.vertices = vertices;
         this.pos0 = pos0;
-        this.f = f;
         this.g = g;
         this.h = h;
     }
 
     public ArrayList<Vertice> getVertices() {
         return vertices;
-    }
-
-    public void criarGrafo(int[] entrada){
-        int cont = 0;
-        this.f = 0;
-        this.g = 0;
-        this.h = 0;
-        for (int i=0; i < 4; i++){
-            for (int j=0; j < 4; j++){
-                this.vertices.add(new Vertice( i, j, entrada[cont], cont));
-                if (entrada[cont] == 0) {
-                    this.pos0 = cont;
-                }
-                cont++;
-            }
-        }
     }
 
     public void criarAdj(){
@@ -56,13 +40,29 @@ public class Grafo {
         }
     }
 
+    public void criarGrafo(int[] entrada){
+        int cont = 0;
+        this.g = 0;
+        this.h = 0;
+        for (int i=0; i < 4; i++){
+            for (int j=0; j < 4; j++){
+                this.vertices.add(new Vertice( i, j, entrada[cont], cont));
+                if (entrada[cont] == 0) {
+                    this.pos0 = cont;
+                }
+                cont++;
+            }
+        }
+        this.criarAdj();
+    }
+
     public void print(){
         int i = 0;
         for (Vertice vertice : this.getVertices()){
             System.out.println("Vertice " + i + ":" + vertice.getValue());
             i++;
         }
-        System.out.println(this.pos0);
+        System.out.println("Posição do 0: " + this.pos0);
     }
 
     public void printAdj(){
@@ -80,7 +80,7 @@ public class Grafo {
         int i = 0;
         int cont = 0;
         for (Vertice vertice : this.vertices) {
-            if (vertice.getValue() != NPuzzle.configFinal.getVertices().get(i).getValue()){
+            if (vertice.getValue() != Main.configFinal.getVertices().get(i).getValue()){
                 cont++;
             }
             i++;
@@ -109,8 +109,8 @@ public class Grafo {
         int soma = 0;
         int aux;
         for (Vertice vertice : this.vertices) {
-            if (vertice.getValue() != NPuzzle.configFinal.getVertices().get(i).getValue()){
-                aux = ((vertice.getPosx() - NPuzzle.configFinal.getVertices().get(i).getPosx()) + (vertice.getPosx() - NPuzzle.configFinal.getVertices().get(i).getPosy()));
+            if (vertice.getValue() != Main.configFinal.getVertices().get(i).getValue()){
+                aux = ((vertice.getPosx() - Main.configFinal.getVertices().get(i).getPosx()) + (vertice.getPosx() - Main.configFinal.getVertices().get(i).getPosy()));
                 if (aux < 0) {
                     aux = aux * -1;
                 }
@@ -132,7 +132,7 @@ public class Grafo {
     }
 
     public Grafo copySwap(Vertice vertice){
-        Grafo copia = new Grafo(this.vertices, this.pos0, this.f, this.g, this.h);
+        Grafo copia = new Grafo(this, this.vertices, this.pos0, this.g, this.h);
         copia.getVertices().get(this.pos0).setValue(vertice.getValue());
         copia.getVertices().get(vertice.getIndex()).setValue(0);
         this.pos0 = vertice.getIndex();
