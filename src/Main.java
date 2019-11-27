@@ -1,7 +1,19 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class Main {
     public static Grafo configFinal = new Grafo();
+    public static ArrayList<Grafo> A = new ArrayList<>();
+    public static ArrayList<Grafo> F = new ArrayList<>();
+
+    public static Grafo aStar(Grafo inicial, Grafo configFinal){
+        A.add(inicial);
+        inicial.setPai(null);
+
+        while (!A.isEmpty()){
+
+        }
+    }
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -15,12 +27,5 @@ class Main {
         }
 
         grafo.criarGrafo(entrada);
-        grafo.print();
-
-        System.out.println("Heurística 1: " + grafo.h1());
-        System.out.println("Heurística 2: " + grafo.h2());
-        System.out.println("Heuristica 3: " + grafo.h3());
-        System.out.println("Heuristica 4: " + grafo.h4(grafo.h1(), grafo.h2(), grafo.h3(), 0.1, 0.8, 0.1));
-        System.out.println("Heuristica 5: " + grafo.h5(grafo.h1(), grafo.h2(), grafo.h3()));
     }
 }

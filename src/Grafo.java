@@ -6,15 +6,39 @@ class Grafo {
     private int pos0;
     private int g;
     private int h;
+    private int f;
 
     public Grafo(){}
 
-    public Grafo(Grafo pai, ArrayList<Vertice> vertices, int pos0, int g, int h) {
+    public Grafo(Grafo pai, ArrayList<Vertice> vertices, int pos0, int g) {
         this.pai = pai;
         this.vertices = vertices;
         this.pos0 = pos0;
         this.g = g;
-        this.h = h;
+    }
+
+    public Grafo getPai() {
+        return pai;
+    }
+
+    public int getPos0() {
+        return pos0;
+    }
+
+    public int getG() {
+        return g;
+    }
+
+    public int getH() {
+        return h;
+    }
+
+    public void calcF() {
+        this.f = this.g + this.h;
+    }
+
+    public void setPai(Grafo pai) {
+        this.pai = pai;
     }
 
     public ArrayList<Vertice> getVertices() {
@@ -54,6 +78,8 @@ class Grafo {
             }
         }
         this.criarAdj();
+        this.h1();
+        this.calcF();
     }
 
     public void print(){
@@ -76,7 +102,7 @@ class Grafo {
         }
     }
 
-    public int h1() {
+    public void h1() {
         int i = 0;
         int cont = 0;
         for (Vertice vertice : this.vertices) {
@@ -85,7 +111,7 @@ class Grafo {
             }
             i++;
         }
-        return cont;
+        this.h = cont;
     }
 
     public int h2() {
@@ -132,10 +158,12 @@ class Grafo {
     }
 
     public Grafo copySwap(Vertice vertice){
-        Grafo copia = new Grafo(this, this.vertices, this.pos0, this.g, this.h);
+        Grafo copia = new Grafo(this, this.vertices, this.pos0, this.g+1);
         copia.getVertices().get(this.pos0).setValue(vertice.getValue());
         copia.getVertices().get(vertice.getIndex()).setValue(0);
         this.pos0 = vertice.getIndex();
+        copia.h1();
+        copia.calcF();
 
         return copia;
     }
