@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 class Grafo {
-    private ArrayList<Vertice> vertices = new ArrayList<>();
+    private ArrayList<Vertice> vertices;
     private Grafo pai;
     private int pos0;
     private int g;
@@ -15,22 +15,6 @@ class Grafo {
         this.vertices = vertices;
         this.pos0 = pos0;
         this.g = g;
-    }
-
-    public Grafo getPai() {
-        return pai;
-    }
-
-    public int getPos0() {
-        return pos0;
-    }
-
-    public int getG() {
-        return g;
-    }
-
-    public int getH() {
-        return h;
     }
 
     public void calcF() {
@@ -65,6 +49,7 @@ class Grafo {
     }
 
     public void criarGrafo(int[] entrada){
+        this.vertices = new ArrayList<>();
         int cont = 0;
         this.g = 0;
         this.h = 0;
@@ -83,10 +68,8 @@ class Grafo {
     }
 
     public void print(){
-        int i = 0;
         for (Vertice vertice : this.getVertices()){
-            System.out.println("Vertice " + i + ":" + vertice.getValue());
-            i++;
+            System.out.println("Index: " + vertice.getIndex() + ":" + vertice.getValue());
         }
         System.out.println("Posição do 0: " + this.pos0);
     }
@@ -157,24 +140,42 @@ class Grafo {
         return h3;
     }
 
-    public Grafo copySwap(Vertice vertice){
+    public Grafo copySwap(Vertice adj){
         Grafo copia = new Grafo(this, this.vertices, this.pos0, this.g+1);
-        copia.getVertices().get(this.pos0).setValue(vertice.getValue());
-        copia.getVertices().get(vertice.getIndex()).setValue(0);
-        this.pos0 = vertice.getIndex();
+        copia.getVertices().get(this.pos0).setValue(adj.getValue());
+        copia.getVertices().get(adj.getIndex()).setValue(0);
+        copia.pos0 = adj.getIndex();
         copia.h1();
         copia.calcF();
 
         return copia;
     }
 
-    public ArrayList<Grafo> gerarSucessores(Grafo grafo){
+    public ArrayList<Grafo> gerarSucessores(){
         ArrayList<Grafo> retorno = new ArrayList<>();
-        int tamListaAdj = grafo.getVertices().get(grafo.pos0).getAdj().size();
-        for (int i = 0; i < tamListaAdj; i++) {
-            Vertice adj = grafo.getVertices().get(this.pos0).getAdj().get(i);
+        for (Vertice adj: this.getVertices().get(this.pos0).getAdj()) {
             retorno.add(this.copySwap(adj));
         }
         return retorno;
+    }
+
+    public Grafo findLeastF(ArrayList<Grafo> A){
+        Grafo least = new Grafo();
+        int leastValue = 100;
+        for (Grafo grafo: A) {
+            if ((grafo.f < leastValue)) {
+                leastValue = grafo.f;
+                least = grafo;
+            }
+        }
+        return least;
+    }
+
+    public void findBetterG(ArrayList<Grafo> A) {
+        for (Grafo grafoA: A) {
+            if (this.vertices.equals(grafoA.vertices) && this.g < grafoA.g) {
+                A.remove(grafoA);
+            }
+        }
     }
 }
