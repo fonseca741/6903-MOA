@@ -50,8 +50,8 @@ class Main {
             System.out.println();
         }
 
-//        if (aStar(grafo, configFinal)) {
-//            System.out.println("Deu bom!");
-//        }
+        if (aStar(grafo, configFinal)) {
+            System.out.println("Deu bom!");
+        }
     }
 }

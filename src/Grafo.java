@@ -140,8 +140,18 @@ class Grafo {
         return h3;
     }
 
-    public Grafo copySwap(Vertice adj){
-        Grafo copia = new Grafo(this, this.vertices, this.pos0, this.g+1);
+    public Grafo copy() {
+        ArrayList<Vertice> verticesCopia = new ArrayList<>();
+        for (Vertice origem : this.getVertices()) {
+            verticesCopia.add(new Vertice(origem.getPosx(), origem.getPosy(), origem.getValue(), origem.getIndex()));
+        }
+        Grafo copia = new Grafo(this, verticesCopia, this.pos0, this.g);
+        copia.criarAdj();
+        return copia;
+    }
+
+    public Grafo copySwap(Vertice adj) {
+        Grafo copia = this.copy();
         copia.getVertices().get(this.pos0).setValue(adj.getValue());
         copia.getVertices().get(adj.getIndex()).setValue(0);
         copia.pos0 = adj.getIndex();
@@ -153,7 +163,9 @@ class Grafo {
 
     public ArrayList<Grafo> gerarSucessores(){
         ArrayList<Grafo> retorno = new ArrayList<>();
-        for (Vertice adj: this.getVertices().get(this.pos0).getAdj()) {
+        int tamListaAdj = this.getVertices().get(this.pos0).getAdj().size();
+        for (int i = 0; i < tamListaAdj; i++) {
+            Vertice adj = this.getVertices().get(this.pos0).getAdj().get(i);
             retorno.add(this.copySwap(adj));
         }
         return retorno;
