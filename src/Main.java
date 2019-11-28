@@ -6,17 +6,19 @@ class Main {
     public static ArrayList<Grafo> A = new ArrayList<>();
     public static ArrayList<Grafo> F = new ArrayList<>();
 
-    public static boolean aStar(Grafo inicial, Grafo configFinal){
+    public static boolean aStar(Grafo inicial){
         A.add(inicial);
         inicial.setPai(null);
-        Grafo q = new Grafo();
-
+        Grafo q;
         while (!A.isEmpty()){
-            q.findLeastF(A);
+            q = Grafo.findLeastF(A);
             A.remove(q);
             F.add(q);
+            if ((q.getH() == 0)) {
+                System.out.println(q.getG());
+                return true;
+            }
             for (Grafo sucessor : q.gerarSucessores()) {
-                System.out.println("Passei!");
                 sucessor.findBetterG(A);
 
                 if (!A.contains(sucessor) && !F.contains(sucessor)) {
@@ -24,9 +26,7 @@ class Main {
                     sucessor.setPai(q);
                 }
             }
-            if (q.getVertices().equals(configFinal.getVertices())) {
-                return true;
-            }
+
         }
         return false;
     }
@@ -41,17 +41,8 @@ class Main {
         for (int i=0; i < 16; i++){
             entrada[i] = scan.nextInt();
         }
-
         grafo.criarGrafo(entrada);
 
-        ArrayList<Grafo> teste = grafo.gerarSucessores();
-        for (Grafo sucessor : teste) {
-            sucessor.print();
-            System.out.println();
-        }
-
-        if (aStar(grafo, configFinal)) {
-            System.out.println("Deu bom!");
-        }
+        aStar(grafo);
     }
 }

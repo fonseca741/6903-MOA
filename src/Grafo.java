@@ -17,12 +17,20 @@ class Grafo {
         this.g = g;
     }
 
-    public void calcF() {
-        this.f = this.g + this.h;
-    }
-
     public void setPai(Grafo pai) {
         this.pai = pai;
+    }
+
+    public int getG() {
+        return g;
+    }
+
+    public int getH() {
+        return h;
+    }
+
+    public void calcF() {
+        this.f = this.g + this.h;
     }
 
     public ArrayList<Vertice> getVertices() {
@@ -67,6 +75,8 @@ class Grafo {
         this.calcF();
     }
 
+    //Funções para teste, utilizadas apenas a título de implementação.
+    /*
     public void print(){
         for (Vertice vertice : this.getVertices()){
             System.out.println("Index: " + vertice.getIndex() + ":" + vertice.getValue());
@@ -83,7 +93,7 @@ class Grafo {
             }
             i++;
         }
-    }
+    }*/
 
     public void h1() {
         int i = 0;
@@ -97,7 +107,7 @@ class Grafo {
         this.h = cont;
     }
 
-    public int h2() {
+    public void h2() {
         int cont = 0;
         for (int i = 0; i < 15; i++) {
             int valAtual = this.vertices.get(i).getValue();
@@ -110,10 +120,10 @@ class Grafo {
                 }
             }
         }
-        return cont;
+        this.h = cont;
     }
 
-    public int h3(){
+    public void h3(){
         int i = 0;
         int soma = 0;
         int aux;
@@ -127,17 +137,17 @@ class Grafo {
             }
             i++;
         }
-        return soma;
+        this.h =soma;
     }
+//
+//    public void h4(int h1, int h2, int h3, double p1, double p2, double p3){
+//        this.h = p1*h1 + p2*h2 + p3*h3;
+//    }
 
-    public double h4(int h1, int h2, int h3, double p1, double p2, double p3){
-        return p1*h1 + p2*h2 + p3*h3;
-    }
-
-    public int h5(int h1, int h2, int h3){
-        if (h1 > h2 && h1 > h3) return h1;
-        if (h2 > h1 && h2 > h3) return h2;
-        return h3;
+    public void h5(int h1, int h2, int h3){
+        if (h1 > h2 && h1 > h3) this.h = h1;
+        if (h2 > h1 && h2 > h3) this.h = h2;
+        this.h = h3;
     }
 
     public Grafo copy() {
@@ -145,7 +155,7 @@ class Grafo {
         for (Vertice origem : this.getVertices()) {
             verticesCopia.add(new Vertice(origem.getPosx(), origem.getPosy(), origem.getValue(), origem.getIndex()));
         }
-        Grafo copia = new Grafo(this, verticesCopia, this.pos0, this.g);
+        Grafo copia = new Grafo(this, verticesCopia, this.pos0, this.g+1);
         copia.criarAdj();
         return copia;
     }
@@ -171,7 +181,7 @@ class Grafo {
         return retorno;
     }
 
-    public Grafo findLeastF(ArrayList<Grafo> A){
+    public static Grafo findLeastF(ArrayList<Grafo> A){
         Grafo least = new Grafo();
         int leastValue = 100;
         for (Grafo grafo: A) {
