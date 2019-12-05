@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class Grafo {
+public class Grafo implements Comparable<Grafo>{
     private ArrayList<Vertice> vertices;
     private Grafo pai;
     private int pos0;
@@ -75,7 +75,7 @@ class Grafo {
         this.calcF();
     }
 
-    //Funções para teste, utilizadas apenas a título de implementação.
+//    Funções utilizadas apenas a título de implementação.
     /*
     public void print(){
         for (Vertice vertice : this.getVertices()){
@@ -181,23 +181,34 @@ class Grafo {
         return retorno;
     }
 
-    public static Grafo findLeastF(ArrayList<Grafo> A){
-        Grafo least = new Grafo();
-        int leastValue = 100;
-        for (Grafo grafo: A) {
-            if ((grafo.f < leastValue)) {
-                leastValue = grafo.f;
-                least = grafo;
-            }
-        }
-        return least;
-    }
+//    public void findBetterG(ArrayList<Grafo> A) {
+//        for (Grafo grafoA: A) {
+//            if (this.vertices.equals(grafoA.vertices) && this.g < grafoA.g) {
+//                A.remove(grafoA);
+//            }
+//        }
+//    }
+//
+//    public static Grafo findLeastF(ArrayList<Grafo> A){
+//        Grafo least = new Grafo();
+//        int leastValue = 100;
+//        for (Grafo grafo: A) {
+//            if ((grafo.f < leastValue)) {
+//                leastValue = grafo.f;
+//                least = grafo;
+//            }
+//        }
+//        return least;
+//    }
 
-    public void findBetterG(ArrayList<Grafo> A) {
-        for (Grafo grafoA: A) {
-            if (this.vertices.equals(grafoA.vertices) && this.g < grafoA.g) {
-                A.remove(grafoA);
-            }
+    @Override
+    public int compareTo(Grafo grafo) {
+        if (this.f > grafo.f) {
+            return 1;
+        } else if (this.f < grafo.f) {
+            return -1;
+        }else {
+            return 0;
         }
     }
 }

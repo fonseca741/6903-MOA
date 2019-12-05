@@ -1,28 +1,34 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
-class Main {
+public class Main {
     public static Grafo configFinal = new Grafo();
-    public static ArrayList<Grafo> A = new ArrayList<>();
-    public static ArrayList<Grafo> F = new ArrayList<>();
+    public static PriorityQueue<Grafo> heap = new PriorityQueue<>();
+    public static HashMap<ArrayList<Vertice>, Grafo> A = new HashMap<>();
+    public static HashMap<ArrayList<Vertice>, Grafo> F = new HashMap<>();
 
     public static boolean aStar(Grafo inicial){
-        A.add(inicial);
+        heap.add(inicial);
+        A.put(inicial.getVertices(), inicial);
         inicial.setPai(null);
         Grafo q;
         while (!A.isEmpty()){
-            q = Grafo.findLeastF(A);
-            A.remove(q);
-            F.add(q);
+            q = heap.poll();
+            A.remove(q.getVertices());
+            F.put(q.getVertices(), q);
             if ((q.getH() == 0)) {
                 System.out.println(q.getG());
                 return true;
             }
             for (Grafo sucessor : q.gerarSucessores()) {
-                sucessor.findBetterG(A);
+                Grafo grafoA = A.get(sucessor.getVertices());
+                if (grafoA != null && sucessor.getG() < grafoA.getG()) {
+                    heap.remove(grafoA);
+                    A.remove(grafoA.getVertices());
+                }
 
-                if (!A.contains(sucessor) && !F.contains(sucessor)) {
-                    A.add(sucessor);
+                if (!A.containsKey(sucessor.getVertices()) && !F.containsKey(sucessor.getVertices())) {
+                    heap.add(sucessor);
+                    A.put(sucessor.getVertices(), sucessor);
                     sucessor.setPai(q);
                 }
             }
@@ -45,4 +51,5 @@ class Main {
 
         aStar(grafo);
     }
+
 }
