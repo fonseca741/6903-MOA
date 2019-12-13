@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="N-Puzzle:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd63775d-d323-4c91-91c0-c91b153635ad" name="Default Changelist" comment="" />
+    <list default="true" id="cd63775d-d323-4c91-91c0-c91b153635ad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/N-Puzzle/Grafo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/N-Puzzle/Grafo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/N-Puzzle/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/N-Puzzle/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/N-Puzzle/Vertice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/N-Puzzle/Vertice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vertice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vertice.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,45 +25,25 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="N-Puzzle" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Grafo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-774">
-              <caret line="3" column="40" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="40" />
+            <state relative-caret-position="326">
+              <caret line="156" column="28" lean-forward="true" selection-start-line="156" selection-start-column="28" selection-end-line="156" selection-end-column="28" />
               <folding>
-                <element signature="e#248#429#0" />
                 <element signature="e#745#1340#0" />
-                <element signature="e#838#1334#1" />
                 <element signature="e#879#956#1" />
                 <element signature="e#996#1073#1" />
                 <element signature="e#1113#1190#1" />
                 <element signature="e#1230#1307#1" />
-                <element signature="e#1346#1857#0" />
-                <element signature="e#1523#1785#1" />
-                <element signature="e#1562#1775#1" />
                 <element signature="e#1680#1737#1" />
-                <element signature="e#1936#2520#0" />
-                <element signature="e#2526#2816#0" />
-                <element signature="e#2632#2787#1" />
-                <element signature="e#2721#2760#1" />
-                <element signature="e#2822#3291#0" />
-                <element signature="e#2900#3262#1" />
-                <element signature="e#3056#3252#1" />
-                <element signature="e#3105#3238#1" />
-                <element signature="e#3165#3220#1" />
-                <element signature="e#3297#3859#0" />
-                <element signature="e#3419#3831#1" />
-                <element signature="e#3508#3804#1" />
-                <element signature="e#3706#3761#1" />
-                <element signature="e#3860#3862#0" />
-                <element signature="e#3997#4153#0" />
-                <element signature="e#5258#5309#0" />
-                <element signature="e#5841#6060#0" />
-                <element signature="e#5921#5954#1" />
-                <element signature="e#5982#6016#1" />
-                <element signature="e#6021#6054#1" />
+                <element signature="e#4092#4093#0" expanded="true" />
+                <element signature="e#4168#4169#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,17 +52,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Vertice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+            <state relative-caret-position="153">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+            <state relative-caret-position="246">
+              <caret line="51" column="63" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
+              <folding>
+                <element signature="method#stringFormat#0;class#Main#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,6 +79,15 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>for</find>
+      <find>h2</find>
+      <find>h1</find>
+      <find>h3</find>
+      <find>h4</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -90,10 +95,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/teste.java" />
-        <option value="$PROJECT_DIR$/src/Vertice.java" />
         <option value="$PROJECT_DIR$/src/Teste.java" />
-        <option value="$PROJECT_DIR$/src/Grafo.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Vertice.java" />
+        <option value="$PROJECT_DIR$/src/Grafo.java" />
       </list>
     </option>
   </component>
@@ -121,6 +126,12 @@
               <item name="N-Puzzle" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="N-Puzzle" type="b2602c69:ProjectViewProjectNode" />
+              <item name="N-Puzzle" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -140,9 +151,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -181,7 +192,9 @@
       <workItem from="1575215651514" duration="9000" />
       <workItem from="1575305965112" duration="61000" />
       <workItem from="1575379338162" duration="8333000" />
-      <workItem from="1575564156244" duration="4962000" />
+      <workItem from="1575564156244" duration="15067000" />
+      <workItem from="1575985564497" duration="1113000" />
+      <workItem from="1576244996434" duration="4662000" />
     </task>
     <task id="LOCAL-00001" summary="Vai delzin">
       <created>1575569533521</created>
@@ -194,19 +207,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13919000" />
+    <option name="totallyTimeSpent" value="29799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1969697" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49841774" visible="true" weight="0.10075758" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="6" sideWeight="0.50158226" side_tool="true" visible="true" weight="0.10075758" />
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32911393" />
@@ -217,8 +230,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32911393" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -250,57 +263,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Grafo.java">
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-774">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="40" />
+        <state relative-caret-position="246">
+          <caret line="51" column="63" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
           <folding>
-            <element signature="e#248#429#0" />
-            <element signature="e#745#1340#0" />
-            <element signature="e#838#1334#1" />
-            <element signature="e#879#956#1" />
-            <element signature="e#996#1073#1" />
-            <element signature="e#1113#1190#1" />
-            <element signature="e#1230#1307#1" />
-            <element signature="e#1346#1857#0" />
-            <element signature="e#1523#1785#1" />
-            <element signature="e#1562#1775#1" />
-            <element signature="e#1680#1737#1" />
-            <element signature="e#1936#2520#0" />
-            <element signature="e#2526#2816#0" />
-            <element signature="e#2632#2787#1" />
-            <element signature="e#2721#2760#1" />
-            <element signature="e#2822#3291#0" />
-            <element signature="e#2900#3262#1" />
-            <element signature="e#3056#3252#1" />
-            <element signature="e#3105#3238#1" />
-            <element signature="e#3165#3220#1" />
-            <element signature="e#3297#3859#0" />
-            <element signature="e#3419#3831#1" />
-            <element signature="e#3508#3804#1" />
-            <element signature="e#3706#3761#1" />
-            <element signature="e#3860#3862#0" />
-            <element signature="e#3997#4153#0" />
-            <element signature="e#5258#5309#0" />
-            <element signature="e#5841#6060#0" />
-            <element signature="e#5921#5954#1" />
-            <element signature="e#5982#6016#1" />
-            <element signature="e#6021#6054#1" />
+            <element signature="method#stringFormat#0;class#Main#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Vertice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        <state relative-caret-position="153">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Grafo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        <state relative-caret-position="326">
+          <caret line="156" column="28" lean-forward="true" selection-start-line="156" selection-start-column="28" selection-end-line="156" selection-end-column="28" />
+          <folding>
+            <element signature="e#745#1340#0" />
+            <element signature="e#879#956#1" />
+            <element signature="e#996#1073#1" />
+            <element signature="e#1113#1190#1" />
+            <element signature="e#1230#1307#1" />
+            <element signature="e#1680#1737#1" />
+            <element signature="e#4092#4093#0" expanded="true" />
+            <element signature="e#4168#4169#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -310,10 +306,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>N-Puzzle:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

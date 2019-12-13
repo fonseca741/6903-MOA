@@ -1,34 +1,43 @@
 import java.util.*;
 
 public class Main {
+
+    public static String stringFormat(ArrayList<Vertice> input) {
+        String retorno = "";
+        for (Vertice vertice : input) {
+            retorno = retorno.concat(Integer.toString(vertice.getValue()));
+        }
+        return retorno;
+    }
+
     public static Grafo configFinal = new Grafo();
     public static PriorityQueue<Grafo> heap = new PriorityQueue<>();
-    public static HashMap<ArrayList<Vertice>, Grafo> A = new HashMap<>();
-    public static HashMap<ArrayList<Vertice>, Grafo> F = new HashMap<>();
+    public static Map<String, Grafo> A = new HashMap<>();
+    public static Map<String, Grafo> F = new HashMap<>();
 
     public static boolean aStar(Grafo inicial){
         heap.add(inicial);
-        A.put(inicial.getVertices(), inicial);
+        A.put(stringFormat(inicial.getVertices()), inicial);
         inicial.setPai(null);
         Grafo q;
         while (!A.isEmpty()){
             q = heap.poll();
-            A.remove(q.getVertices());
-            F.put(q.getVertices(), q);
+            A.remove(stringFormat(q.getVertices()));
+            F.put(stringFormat(q.getVertices()), q);
             if ((q.getH() == 0)) {
                 System.out.println(q.getG());
                 return true;
             }
             for (Grafo sucessor : q.gerarSucessores()) {
-                Grafo grafoA = A.get(sucessor.getVertices());
+                Grafo grafoA = A.get(stringFormat(sucessor.getVertices()));
                 if (grafoA != null && sucessor.getG() < grafoA.getG()) {
                     heap.remove(grafoA);
-                    A.remove(grafoA.getVertices());
+                    A.remove(stringFormat(grafoA.getVertices()));
                 }
 
-                if (!A.containsKey(sucessor.getVertices()) && !F.containsKey(sucessor.getVertices())) {
+                if (!A.containsKey(stringFormat(sucessor.getVertices())) && !F.containsKey(stringFormat(sucessor.getVertices()))) {
                     heap.add(sucessor);
-                    A.put(sucessor.getVertices(), sucessor);
+                    A.put(stringFormat(sucessor.getVertices()), sucessor);
                     sucessor.setPai(q);
                 }
             }

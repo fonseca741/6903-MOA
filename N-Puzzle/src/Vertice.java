@@ -7,6 +7,8 @@ public class Vertice {
     private int value;
     private int index;
 
+    public Vertice(){}
+
     public Vertice(int posx, int posy, int value, int index) {
         adj = new ArrayList<>();
         this.posx = posx;

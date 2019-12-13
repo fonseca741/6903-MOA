@@ -5,8 +5,8 @@ public class Grafo implements Comparable<Grafo>{
     private Grafo pai;
     private int pos0;
     private int g;
-    private int h;
-    private int f;
+    private double h;
+    private double f;
 
     public Grafo(){}
 
@@ -25,7 +25,7 @@ public class Grafo implements Comparable<Grafo>{
         return g;
     }
 
-    public int getH() {
+    public double getH() {
         return h;
     }
 
@@ -71,7 +71,7 @@ public class Grafo implements Comparable<Grafo>{
             }
         }
         this.criarAdj();
-        this.h1();
+        this.h5();
         this.calcF();
     }
 
@@ -95,7 +95,7 @@ public class Grafo implements Comparable<Grafo>{
         }
     }*/
 
-    public void h1() {
+    public int h1() {
         int i = 0;
         int cont = 0;
         for (Vertice vertice : this.vertices) {
@@ -105,9 +105,10 @@ public class Grafo implements Comparable<Grafo>{
             i++;
         }
         this.h = cont;
+        return cont;
     }
 
-    public void h2() {
+    public int h2() {
         int cont = 0;
         for (int i = 0; i < 15; i++) {
             int valAtual = this.vertices.get(i).getValue();
@@ -121,33 +122,43 @@ public class Grafo implements Comparable<Grafo>{
             }
         }
         this.h = cont;
+        return cont;
     }
 
-    public void h3(){
+    public int h3(){
         int i = 0;
         int soma = 0;
-        int aux;
+        Vertice teste = new Vertice();
         for (Vertice vertice : this.vertices) {
             if (vertice.getValue() != Main.configFinal.getVertices().get(i).getValue()){
-                aux = ((vertice.getPosx() - Main.configFinal.getVertices().get(i).getPosx()) + (vertice.getPosx() - Main.configFinal.getVertices().get(i).getPosy()));
-                if (aux < 0) {
-                    aux = aux * -1;
+                for (Vertice it : Main.configFinal.getVertices()) {
+                    if (it.getValue() == vertice.getValue()) {
+                        teste = it;
+                    }
                 }
-                soma += aux;
+                soma += (Math.abs((vertice.getPosx() - teste.getPosx())) + Math.abs((vertice.getPosy() - teste.getPosy())));
+//                if (aux < 0) {
+//                    aux = aux * -1;
+//                }
             }
             i++;
         }
-        this.h =soma;
+        this.h = soma;
+        return soma;
     }
-//
-//    public void h4(int h1, int h2, int h3, double p1, double p2, double p3){
-//        this.h = p1*h1 + p2*h2 + p3*h3;
-//    }
 
-    public void h5(int h1, int h2, int h3){
-        if (h1 > h2 && h1 > h3) this.h = h1;
-        if (h2 > h1 && h2 > h3) this.h = h2;
-        this.h = h3;
+    public void h4(){
+        this.h = 0.2 * this.h1() + 0.1 * this.h2() + 0.8 * this.h3();
+    }
+
+    public void h5(){
+        int ah1 = this.h1();
+        int ah2 = this.h2();
+        int ah3 = this.h3();
+
+        if (ah1 > ah2 && ah1 > ah3) this.h = ah1;
+        if (ah2 > ah1 && ah2 > ah3) this.h = ah2;
+        this.h = ah3;
     }
 
     public Grafo copy() {
@@ -165,7 +176,7 @@ public class Grafo implements Comparable<Grafo>{
         copia.getVertices().get(this.pos0).setValue(adj.getValue());
         copia.getVertices().get(adj.getIndex()).setValue(0);
         copia.pos0 = adj.getIndex();
-        copia.h1();
+        copia.h5();
         copia.calcF();
 
         return copia;
