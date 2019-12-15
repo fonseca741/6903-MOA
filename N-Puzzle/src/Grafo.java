@@ -148,7 +148,7 @@ public class Grafo implements Comparable<Grafo>{
     }
 
     public void h4(){
-        this.h = 0.2 * this.h1() + 0.1 * this.h2() + 0.8 * this.h3();
+        this.h = 0.2 * this.h1() + 0.1 * this.h2() + 0.7 * this.h3();
     }
 
     public void h5(){

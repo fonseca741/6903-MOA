@@ -8,12 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cd63775d-d323-4c91-91c0-c91b153635ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/N-Puzzle/Grafo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/N-Puzzle/Grafo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/N-Puzzle/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/N-Puzzle/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/N-Puzzle/Vertice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/N-Puzzle/Vertice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vertice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vertice.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,18 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Grafo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="156" column="28" lean-forward="true" selection-start-line="156" selection-start-column="28" selection-end-line="156" selection-end-column="28" />
-              <folding>
-                <element signature="e#745#1340#0" />
-                <element signature="e#879#956#1" />
-                <element signature="e#996#1073#1" />
-                <element signature="e#1113#1190#1" />
-                <element signature="e#1230#1307#1" />
-                <element signature="e#1680#1737#1" />
-                <element signature="e#4092#4093#0" expanded="true" />
-                <element signature="e#4168#4169#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="150" column="56" selection-start-line="150" selection-start-column="56" selection-end-line="150" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -61,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="51" column="63" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
+            <state relative-caret-position="425">
+              <caret line="37" column="131" lean-forward="true" selection-start-line="37" selection-start-column="131" selection-end-line="37" selection-end-column="131" />
               <folding>
                 <element signature="method#stringFormat#0;class#Main#0" />
               </folding>
@@ -86,6 +71,7 @@
       <find>h1</find>
       <find>h3</find>
       <find>h4</find>
+      <find>h5</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,7 +99,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,7 +122,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -194,7 +180,8 @@
       <workItem from="1575379338162" duration="8333000" />
       <workItem from="1575564156244" duration="15067000" />
       <workItem from="1575985564497" duration="1113000" />
-      <workItem from="1576244996434" duration="4662000" />
+      <workItem from="1576244996434" duration="6525000" />
+      <workItem from="1576335959619" duration="2242000" />
     </task>
     <task id="LOCAL-00001" summary="Vai delzin">
       <created>1575569533521</created>
@@ -203,23 +190,29 @@
       <option name="project" value="LOCAL" />
       <updated>1575569533521</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="funcionando com h5">
+      <created>1576258952599</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576258952599</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29799000" />
+    <option name="totallyTimeSpent" value="33904000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49841774" visible="true" weight="0.10075758" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49841774" visible="true" weight="0.10227273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.50158226" side_tool="true" visible="true" weight="0.10075758" />
+      <window_info id="Favorites" order="6" sideWeight="0.50158226" side_tool="true" weight="0.10075758" />
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32911393" />
@@ -250,7 +243,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Vai delzin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vai delzin" />
+    <MESSAGE value="funcionando com h5" />
+    <option name="LAST_COMMIT_MESSAGE" value="funcionando com h5" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/N-Puzzle.iml">
@@ -266,16 +260,6 @@
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="51" column="63" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
-          <folding>
-            <element signature="method#stringFormat#0;class#Main#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Vertice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -283,20 +267,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="37" column="131" lean-forward="true" selection-start-line="37" selection-start-column="131" selection-end-line="37" selection-end-column="131" />
+          <folding>
+            <element signature="method#stringFormat#0;class#Main#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Grafo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="156" column="28" lean-forward="true" selection-start-line="156" selection-start-column="28" selection-end-line="156" selection-end-column="28" />
-          <folding>
-            <element signature="e#745#1340#0" />
-            <element signature="e#879#956#1" />
-            <element signature="e#996#1073#1" />
-            <element signature="e#1113#1190#1" />
-            <element signature="e#1230#1307#1" />
-            <element signature="e#1680#1737#1" />
-            <element signature="e#4092#4093#0" expanded="true" />
-            <element signature="e#4168#4169#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="150" column="56" selection-start-line="150" selection-start-column="56" selection-end-line="150" selection-end-column="56" />
         </state>
       </provider>
     </entry>
