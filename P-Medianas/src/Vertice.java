@@ -19,10 +19,16 @@ public class Vertice {
         return Math.sqrt(((this.posx - vertice.posx)*(this.posx - vertice.posx)) + ((this.posy - vertice.posy)*(this.posy - vertice.posy)));
     }
 
-    public boolean coordIguais(Vertice vertice) {
-        if (this.posy == vertice.posy && this.posx == vertice.posx) {
+    public boolean equals(Vertice vertice) {
+        if (this.posx == vertice.posx && this.posy == vertice.posy) {
             return true;
         }
         return false;
+    }
+
+    public Vertice deepCopy() {
+        double distanciaCopia = this.distancia;
+        Vertice copia = new Vertice(this.capacidadeMax, this.capacidadeAtual, this.demanda, this.posx, this.posy, distanciaCopia);
+        return copia;
     }
 }
