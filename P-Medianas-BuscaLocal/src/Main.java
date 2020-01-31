@@ -127,6 +127,40 @@ public class Main {
         return retorno;
     }
 
+    public static Grafo buscaLocal(Grafo filhoAntigo){
+        Grafo filhoCopia = filhoAntigo.deepCopy();
+        Random gerador = new Random();
+        int indiceVertice;
+        boolean existe = false;
+
+        for (int i = 0; i < filhoAntigo.numMedianas; i++) {
+            indiceVertice = gerador.nextInt(filhoAntigo.vertices.size());
+            Vertice novaMediana = filhoCopia.vertices.get(indiceVertice).deepCopy();
+            for (Vertice v : filhoCopia.medianas) {
+                if (novaMediana.equals(v)) {
+                    existe = true;
+                }
+            }
+            if (!existe) {
+                filhoCopia.medianas.remove(i);
+                filhoCopia.medianas.add(novaMediana);
+                filhoCopia.resetarCapacidadeAndDistancia();
+                filhoCopia.attCapacidadeAndDistancia();
+                filhoCopia.calcularFitness();
+                if (filhoCopia.fitness < filhoAntigo.fitness) {
+                    filhoAntigo = filhoCopia.deepCopy();
+                    i = 0;
+                } else {
+                    filhoCopia = filhoAntigo.deepCopy();
+                }
+            } else {
+                i--;
+            }
+            existe = false;
+        }
+        return filhoAntigo.deepCopy();
+    }
+
     public static void attPopulacaoMut(ArrayList<Grafo> mutados) {
         populacaoAux.clear();
         for (Grafo g : mutados) {
@@ -173,6 +207,7 @@ public class Main {
     public static void algGenetico(Grafo grafoInicial) {
         int i = 0;
         Grafo filho;
+        Grafo filhoBusca;
         ArrayList<Grafo> mutados;
         gerarPopulacaoInicial(grafoInicial);
         System.out.println("---------POPULAÇÃO INICIAL----------");
@@ -180,8 +215,8 @@ public class Main {
             g.printFitness();
         }
         System.out.println("------------------------------------");
-        //TODO: Arrumar a condição de parada do while.
         while (i < 700) {
+            i++;
             selecao(populacaoInicial);
             filho = cruzamento(reprodutores.get(0), reprodutores.get(1));
             mutados = gerarMutacao();
@@ -190,14 +225,12 @@ public class Main {
                 novaGeracao.add(g.deepCopy());
             }
             attPopulacaoMut(mutados);
-            attPopulacaoFilho(filho);
+            filhoBusca = buscaLocal(filho); //comente essa linha para desativar a busca local e troque o parametro da função abaixo para 'filho'
+            attPopulacaoFilho(filhoBusca); //caso não for executar com busca local, alterar o parametro de 'filhoBusca' para 'filho'
             attPopulacaoInicial();
-            i++;
             mutados.clear();
             Collections.sort(populacaoInicial);
-       	    if (i % 10 == 0){
-	    	populacaoInicial.get(0).printFitness();
-	    }
+            populacaoInicial.get(0).printFitness();
         }
         Collections.sort(populacaoInicial);
         Collections.sort(novaGeracao);

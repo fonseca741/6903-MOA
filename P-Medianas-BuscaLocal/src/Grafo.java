@@ -47,7 +47,7 @@ public class Grafo implements Comparable<Grafo>{
     }
 
     public void printFitness() {
-        System.out.printf("%.0f %n ", this.fitness);
+        System.out.printf("%.0f %n", this.fitness);
     }
 
     public Grafo deepCopy() {
